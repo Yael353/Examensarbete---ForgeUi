@@ -1,10 +1,13 @@
-import "./index.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Components from "./pages/Components";
 
 function App() {
   return (
-    <>
-      <h1 className="text-primary">Tjena</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/components" element={<Components />} />
+    </Routes>
   );
 }
 
