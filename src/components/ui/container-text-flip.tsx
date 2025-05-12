@@ -35,7 +35,7 @@ export function ContainerTextFlip({
     if (textRef.current) {
       // Add some padding to the text width (30px on each side)
       // @ts-ignore
-      const textWidth = textRef.current.scrollWidth + 30;
+      const textWidth = textRef.current.scrollWidth + 10;
       setWidth(textWidth);
     }
   };
@@ -55,13 +55,13 @@ export function ContainerTextFlip({
   }, [words, interval]);
 
   return (
-    <motion.p
+    <motion.div
       layout
       layoutId={`words-here-${id}`}
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
-        "relative inline-block text-center text-2xl bg-background font-cinzel text-black  dark:text-white",
+        "relative inline-block text-center text-2xl bg-background font-cinzel text-foreground dark:text-white",
         className
       )}
       key={words[currentWordIndex]}
@@ -96,6 +96,6 @@ export function ContainerTextFlip({
           ))}
         </motion.div>
       </motion.div>
-    </motion.p>
+    </motion.div>
   );
 }

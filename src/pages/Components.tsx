@@ -1,5 +1,8 @@
+import React from "react";
+import { SidebarProvider } from "@/components/ui/sidebar";
+
 function Components() {
-  return <div>Tjena från components</div>;
+  return;
 }
 
 export default Components;

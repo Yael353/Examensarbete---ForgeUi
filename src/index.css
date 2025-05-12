@@ -18,7 +18,7 @@
     --color-foreground: rgb(255, 255, 255);
     --color-muted-foreground: rgb(200, 200, 200);
     --color-accent: rgb(0, 122, 255);
-    --color-gold: rgb(255, 215, 0);
+    --color-gold: rgba(229, 193, 0, 1)
   }
 }
 @layer utilities {
