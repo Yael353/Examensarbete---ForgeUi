@@ -1,19 +1,35 @@
-"use client";
 import { cn } from "@/lib/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { NavLink } from "react-router-dom";
 
-interface Links {
-  label: string;
-  href: string;
-  icon: React.JSX.Element | React.ReactNode;
+// interface Links {
+//   label: string;
+//   href: string;
+//   icon: React.JSX.Element | React.ReactNode;
+// }
+
+interface SidebarContextProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  animate: boolean;
+  currentView: string;
+  setCurrentView: React.Dispatch<React.SetStateAction<string>>;
 }
 
 interface SidebarContextProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   animate: boolean;
+}
+
+interface SidebarContextProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  animate: boolean;
+  currentView: string;
+  setCurrentView: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SidebarContext = createContext<SidebarContextProps | undefined>(
@@ -32,7 +48,7 @@ export const SidebarProvider = ({
   children,
   open: openProp,
   setOpen: setOpenProp,
-  animate = true,
+  animate = false,
 }: {
   children: React.ReactNode;
   open?: boolean;
@@ -40,12 +56,15 @@ export const SidebarProvider = ({
   animate?: boolean;
 }) => {
   const [openState, setOpenState] = useState(false);
+  const [currentView, setCurrentView] = useState("home"); // 👈 här
 
   const open = openProp !== undefined ? openProp : openState;
   const setOpen = setOpenProp !== undefined ? setOpenProp : setOpenState;
 
   return (
-    <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>
+    <SidebarContext.Provider
+      value={{ open, setOpen, animate, currentView, setCurrentView }} // 👈 lägg till här
+    >
       {children}
     </SidebarContext.Provider>
   );
@@ -88,7 +107,7 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[300px] shrink-0",
+          "h-full px-4 py-4 hidden md:flex md:flex-col bg-background w-[300px] shrink-0 border-2 border-neutral-800 rounded-xl m-6",
           className
         )}
         animate={{
@@ -154,35 +173,65 @@ export const MobileSidebar = ({
   );
 };
 
-export const SidebarLink = ({
-  link,
-  className,
-  ...props
-}: {
-  link: Links;
-  className?: string;
-}) => {
-  const { open, animate } = useSidebar();
-  return (
-    <a
-      href={link.href}
-      className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2",
-        className
-      )}
-      {...props}
-    >
-      {link.icon}
+type SidebarLinkProps = {
+  label: string;
+  view?: string;
+  to?: string;
+};
 
-      <motion.span
-        animate={{
-          display: animate ? (open ? "inline-block" : "none") : "inline-block",
-          opacity: animate ? (open ? 1 : 0) : 1,
-        }}
-        className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
-      >
-        {link.label}
-      </motion.span>
-    </a>
+export const SidebarLink = ({ label, view, to }: SidebarLinkProps) => {
+  const { setCurrentView } = useSidebar();
+
+  if (to) {
+    return (
+      <NavLink to={to} className="block p-2">
+        {label}
+      </NavLink>
+    );
+  }
+
+  return (
+    <button onClick={() => setCurrentView(view!)} className="block p-2">
+      {label}
+    </button>
   );
 };
+
+// export const SidebarLink = ({
+//   link,
+//   className,
+//   ...props
+// }: {
+//   link: Links;
+//   className?: string;
+// }) => {
+//   const { open, animate } = useSidebar();
+//   return (
+//     <div className="flex flex-col justify-between  h-full">
+//       <a
+//         href={link.href}
+//         className={cn(
+//           "flex items-center justify-start gap-2  group/sidebar py-2",
+//           className
+//         )}
+//         {...props}
+//       >
+//         {link.icon}
+
+//         <motion.span
+//           animate={{
+//             display: animate
+//               ? open
+//                 ? "inline-block"
+//                 : "none"
+//               : "inline-block",
+//             opacity: animate ? (open ? 1 : 0) : 1,
+//           }}
+//           className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
+//         >
+//           {link.label}
+//         </motion.span>
+//       </a>
+//     </div>
+//   );
+// };

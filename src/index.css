@@ -1,11 +1,13 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap");
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-background: rgb(255, 255, 255);
+  --color-popover: rgb(255, 255, 255);
+  --color-popover-foreground: rgb(37, 37, 37);
   --color-foreground: rgb(10, 25, 47);
   --color-muted-foreground: rgb(60, 60, 60);
   --color-accent: rgb(0, 122, 255);
@@ -15,10 +17,12 @@
 @layer theme {
   .dark {
     --color-background: rgb(0, 0, 0);
+    --color-popover: rgb(52, 52, 52);
+    --color-popover-foreground: rgb(251, 251, 251);
     --color-foreground: rgb(255, 255, 255);
     --color-muted-foreground: rgb(200, 200, 200);
     --color-accent: rgb(0, 122, 255);
-    --color-gold: rgba(229, 193, 0, 1)
+    --color-gold: rgba(229, 193, 0, 1);
   }
 }
 @layer utilities {
@@ -160,13 +164,14 @@ button:focus-visible {
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* --sidebar-background: 0 0% 98%; */
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 .dark {
@@ -194,13 +199,14 @@ button:focus-visible {
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 @layer base {
@@ -209,5 +215,6 @@ button:focus-visible {
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--background, #0a192f);
   }
 }

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 function Home() {
   return (
-    <div className="bg- h-screen">
+    <div className="bg-background h-screen">
       <div className="flex justify-between pt-4 pr-4">
         <img src="./Forge.png" alt="Forge Logo" className="w-30 h-25 pl-4" />
         <ModeToggle />

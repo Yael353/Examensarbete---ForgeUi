@@ -3,9 +3,9 @@ import { DraggableCardBody } from "./ui/draggable-card";
 function BodySection() {
   return (
     <div className="w-full py-20 sm:pt-10 bg-background text-foreground">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-[90rem]  mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Text sektion */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center pl-6">
           <h2 className="text-7xl font-bold mb-4 text-foreground font-cinzel">
             Unleash the Power of Modern UI
           </h2>
@@ -22,7 +22,7 @@ function BodySection() {
         </div>
         {/* Exempelbilder sektion */}
         <div>
-          <DraggableCardBody className="relative w-full h-[500px]">
+          <DraggableCardBody className="relative w-full h-[500px] ">
             <DraggableCardBody className="absolute top-20 left-15 z-50 rotate-[2deg]">
               <img
                 src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
