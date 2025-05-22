@@ -1,4 +1,4 @@
-import { DraggableCardBody } from "./ui/draggable-card";
+import { DraggableCardBody } from "../ui/draggable-card";
 
 function BodySection() {
   return (

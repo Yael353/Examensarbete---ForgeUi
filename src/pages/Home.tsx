@@ -1,7 +1,7 @@
 import { ModeToggle } from "@/components/darkmode/Mode-Toggle";
-import BodySection from "../components/BodySection";
-import Hero from "../components/Hero";
-import Footer from "@/components/Footer";
+import BodySection from "../components/home-components/BodySection";
+import Hero from "../components/home-components/Hero";
+import Footer from "@/components/home-components/Footer";
 
 function Home() {
   return (

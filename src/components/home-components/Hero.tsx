@@ -1,6 +1,6 @@
-import { SparklesCore } from "../components/ui/Sparkles";
-import { VideoText } from "./magicui/video-text";
-import { ContainerTextFlip } from "./ui/container-text-flip";
+import { SparklesCore } from "../ui/Sparkles";
+import { VideoText } from "../magicui/video-text";
+import { ContainerTextFlip } from "../ui/container-text-flip";
 
 function Home() {
   return (
@@ -52,14 +52,13 @@ function Home() {
         </div>
 
         <div className="py-6 relative">
-          <div className="text-2xl font-semibold font-cinzel max-w-5xl mx-auto">
-            We give you the components to craft
+          <div className="text-2xl font-semibold font-cinzel max-w-5xl mx-auto text-center leading-relaxed">
+            Shape{" "}
             <span>
               <ContainerTextFlip />
-            </span>
-            websites that are not only visually stunning but also
-            high-performing, user-friendly, and scalable, ensuring an
-            exceptional experience for both developers and users alike."
+            </span>{" "}
+            experiences with powerful components — forged for performance,
+            designed to impress.
           </div>
         </div>
 

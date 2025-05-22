@@ -218,3 +218,44 @@ button:focus-visible {
     background-color: var(--background, #0a192f);
   }
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -500% 0;
+  }
+  100% {
+    background-position: 500% 0;
+  }
+}
+
+@keyframes bounce-cool {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Koppla ihop keyframes med utility-klasser */
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+}
+
+.animate-bounce-cool {
+  animation: bounce-cool 1.2s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
+}
