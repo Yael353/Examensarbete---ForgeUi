@@ -6,6 +6,7 @@
 
 @theme {
   --color-background: rgb(255, 255, 255);
+  --color-primary: rgb(255, 248, 227);
   --color-popover: rgb(255, 255, 255);
   --color-popover-foreground: rgb(37, 37, 37);
   --color-foreground: rgb(10, 25, 47);
@@ -17,6 +18,7 @@
 @layer theme {
   .dark {
     --color-background: rgb(0, 0, 0);
+    --color-primary: rgb(32, 40, 66);
     --color-popover: rgb(52, 52, 52);
     --color-popover-foreground: rgb(251, 251, 251);
     --color-foreground: rgb(255, 255, 255);
@@ -146,7 +148,7 @@ button:focus-visible {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(94% 0.015 270);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -176,12 +178,13 @@ button:focus-visible {
 
 .dark {
   --background: oklch(0.145 0 0);
+  --primary: oklch(0.18 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  /* --primary: oklch(0.922 0 0); */
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -247,7 +250,6 @@ button:focus-visible {
   }
 }
 
-/* Koppla ihop keyframes med utility-klasser */
 .animate-shimmer {
   animation: shimmer 2s infinite linear;
 }

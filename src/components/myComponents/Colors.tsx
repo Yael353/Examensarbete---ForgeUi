@@ -151,6 +151,11 @@ export default function Colors() {
           </div>
         </div>
       )}
+
+      <div className="grid grid-cols-4 border-2">
+        <div></div>
+
+      </div>
     </div>
   );
 }
