@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Heading } from "./Heading";
-import { ExpandableCodeBlock } from "./ExpandableCodeBlock";
+import { ExpandableCodeBlock } from "../ExpandableCodeBlock";
 import { InstallBlock } from "../InstallBlock";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 const headingCode = `
 import clsx from "clsx";
@@ -148,7 +148,7 @@ export const HeadingGallery = () => {
               <div className="mt-4 rounded-lg w-fit mx-auto text-left overflow-hidden">
                 <SyntaxHighlighter
                   language="tsx"
-                  style={anOldHope}
+                  style={a11yDark}
                   customStyle={{ padding: "1rem", borderRadius: "0.5rem" }}
                 >
                   {code}
@@ -160,7 +160,7 @@ export const HeadingGallery = () => {
       </div>
 
       <div className="mt-16 w-auto">
-        <InstallBlock />
+        <InstallBlock command="npm install clsx" />
       </div>
 
       <div className="max-w-full mx-auto pt-16">

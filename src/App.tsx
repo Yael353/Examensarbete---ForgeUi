@@ -2,14 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Components from "./pages/Components";
 import { ThemeProvider } from "./components/darkmode/ThemeProvider";
-// import ComponentsPage from "./components/ComponentsPage";
 import SidebarLayout from "./layouts/SidebarLayout";
-import Colors from "./components/myComponents/Colors";
-import About from "./components/myComponents/About";
-import Documentation from "./components/myComponents/Documentation";
+import Colors from "./components/myComponents/views/Colors";
+import About from "./components/myComponents/views/About";
+import Documentation from "./components/myComponents/views/Documentation";
 import FancyButtonGallery from "./components/myComponents/Button";
-// import { Heading } from "./components/myComponents/Heading";
 import { HeadingGallery } from "./components/myComponents/headings/HeadingGallarey";
+import { ContactFormGallery } from "./components/myComponents/contactform/ContactFormGallery";
 
 function App() {
   return (
@@ -28,6 +27,10 @@ function App() {
             <Route
               path="/components/myComponents/Heading"
               element={<HeadingGallery />}
+            />
+            <Route
+              path="/components/myComponents/contactform/ContactForm"
+              element={<ContactFormGallery />}
             />
             <Route path="/colors" element={<Colors />} />
             <Route path="/about" element={<About />} />

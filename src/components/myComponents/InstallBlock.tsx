@@ -1,12 +1,14 @@
 import { Copy } from "lucide-react";
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-
 import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-export const InstallBlock = () => {
+type InstallBlockProps = {
+  command: string;
+};
+
+export const InstallBlock: React.FC<InstallBlockProps> = ({ command }) => {
   const [copied, setCopied] = useState(false);
-  const command = "npm install clsx";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);

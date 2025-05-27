@@ -65,6 +65,10 @@ export default function SidebarLayout() {
                     label="Heading"
                     to="/components/myComponents/Heading"
                   />
+                  <SidebarLink
+                    label="Contact Form"
+                    to="/components/myComponents/contactform/ContactForm"
+                  />
                   {/* Lägg till fler komponent-länkar här */}
                 </div>
               </div>

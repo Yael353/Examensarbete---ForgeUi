@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Copy } from "lucide-react";
 
 type ExpandableCodeBlockProps = {
@@ -30,8 +30,8 @@ export const ExpandableCodeBlock: React.FC<ExpandableCodeBlockProps> = ({
         {/* Kodblock */}
         <SyntaxHighlighter
           language="tsx"
-          useInlineStyles={true}
-          style={anOldHope}
+          wrapLongLines={true}
+          style={a11yDark}
           customStyle={{
             padding: "1rem",
             borderRadius: "0.5rem",
