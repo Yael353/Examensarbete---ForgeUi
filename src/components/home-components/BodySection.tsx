@@ -3,7 +3,7 @@
 function BodySection() {
   return (
     <div className="w-full md:py-20 py-10 text-foreground bg-primary">
-      <div className="max-w-[90rem]  mx-auto flex flex-col">
+      <div className="max-w-[90rem] mx-auto flex flex-col">
         {/* grid grid-cols-1 md:grid-cols-2 gap-12 */}
         {/* Text sektion */}
         <div className="flex flex-col justify-center">

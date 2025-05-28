@@ -6,7 +6,7 @@ import Nav from "@/components/home-components/Nav";
 
 function Home() {
   return (
-    <div className="bg-background h-screen">
+    <div className="">
       <Nav />
       <Hero />
       <BodySection />

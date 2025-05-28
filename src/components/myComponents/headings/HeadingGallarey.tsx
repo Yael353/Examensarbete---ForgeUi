@@ -3,7 +3,7 @@ import { Heading } from "./Heading";
 import { ExpandableCodeBlock } from "../ExpandableCodeBlock";
 import { InstallBlock } from "../InstallBlock";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const headingCode = `
 import clsx from "clsx";
@@ -148,7 +148,7 @@ export const HeadingGallery = () => {
               <div className="mt-4 rounded-lg w-fit mx-auto text-left overflow-hidden">
                 <SyntaxHighlighter
                   language="tsx"
-                  style={a11yDark}
+                  style={anOldHope}
                   customStyle={{ padding: "1rem", borderRadius: "0.5rem" }}
                 >
                   {code}

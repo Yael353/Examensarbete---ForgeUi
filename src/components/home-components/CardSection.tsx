@@ -5,12 +5,12 @@ import {
 
 function CardSection() {
   return (
-    <div className="md:py-20 py-10">
+    <div className="md:py-20 py-10 bg-background w-full">
       <h2 className="text-5xl md:text-6xl font-semibold text-center text-gradient  font-cinzel tracking-wide drop-shadow-lg">
         Dive Into Our <span className="text-gold">UI</span> Elements
       </h2>
 
-      <div className="relative w-full h-[500px] flex justify-center items-center ">
+      <div className="relative w-full h-[500px] flex justify-center items-center overflow-hidden ">
         <DraggableCardContainer>
           <DraggableCardBody className="w-64 h-80 rotate-[2deg]">
             <a href="/components/myComponents/Button">

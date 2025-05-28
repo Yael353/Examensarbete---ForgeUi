@@ -1,7 +1,7 @@
 import { Copy } from "lucide-react";
 import { useState, type JSX } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface ButtonItem {
   id: number;
@@ -78,7 +78,8 @@ export default function FancyButtonGallery() {
           <span className="relative z-10">Laser Edge</span>
         </button>
       ),
-      code: `<button
+      code: `
+      <button
           type="button"
           className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-pink-300 border-2 border-pink-400 rounded-xl shadow-lg transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-pink-500 group"
           aria-label="Laser Border Button"
@@ -102,7 +103,8 @@ export default function FancyButtonGallery() {
           <span className="relative z-10">Gold Shimmer</span>
         </button>
       ),
-      code: `<button
+      code: `
+      <button
           type="button"
           className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-yellow-300 border-2 border-yellow-500 rounded-xl shadow-xl transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 group"
           aria-label="Gold Shimmer Button"
@@ -155,7 +157,7 @@ export default function FancyButtonGallery() {
           type="button"
           className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-orange-300 border-2 border-orange-400 rounded-xl shadow-2xl transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-500 group"
           aria-label="Blazing Glow Button"
-        >
+          >
           <span className="absolute inset-0 bg-gradient-to-br from-orange-700 to-orange-900 opacity-80 group-hover:opacity-100 transition duration-300"></span>
           <span className="absolute inset-0 border-2 border-orange-500 rounded-xl animate-pulse group-hover:animate-none"></span>
           <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
@@ -239,7 +241,9 @@ export default function FancyButtonGallery() {
 
   return (
     <div className="max-w-full mx-auto p-6">
-      <h3 className="flex text-5xl justify-stard font-bold pb-2">Buttons</h3>
+      <h3 className="flex text-5xl text-accent-foreground/70 justify-stard font-bold pb-2">
+        Buttons
+      </h3>
       <p className="text-2xl pb-4 text-accent-foreground/70">
         A variety of buttons to explore and modify at your command 🔥{" "}
       </p>
@@ -274,8 +278,8 @@ export default function FancyButtonGallery() {
 
           <SyntaxHighlighter
             language="javascript"
-            style={a11yDark}
-            wrapLongLines={true}
+            style={anOldHope}
+            wrapLongLines={false}
             customStyle={{
               borderRadius: 8,
               fontSize: 14,

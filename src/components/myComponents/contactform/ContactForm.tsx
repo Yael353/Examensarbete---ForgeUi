@@ -79,7 +79,7 @@ export default function ContactForm() {
         type="submit"
         className="w-full text-lg font-semibold transition-all duration-300 
            bg-blue-600 text-white 
-           dark:bg-gray-700 dark:text-white
+           dark:bg-popover dark:text-white
            hover:scale-[1.02] 
            focus-visible:ring-4 focus-visible:ring-blue-400/60
            dark:focus-visible:ring-gray-300/60"

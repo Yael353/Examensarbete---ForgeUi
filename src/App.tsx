@@ -9,6 +9,8 @@ import Documentation from "./components/myComponents/views/Documentation";
 import FancyButtonGallery from "./components/myComponents/Button";
 import { HeadingGallery } from "./components/myComponents/headings/HeadingGallarey";
 import { ContactFormGallery } from "./components/myComponents/contactform/ContactFormGallery";
+import { LoginFormGallery } from "./components/myComponents/loginform/LoginFormGallery";
+import { CardGallery } from "./components/myComponents/card/CardGallery";
 
 function App() {
   return (
@@ -31,6 +33,14 @@ function App() {
             <Route
               path="/components/myComponents/contactform/ContactForm"
               element={<ContactFormGallery />}
+            />
+            <Route
+              path="/components/myComponents/loginform/LoginForm"
+              element={<LoginFormGallery />}
+            />
+            <Route
+              path="/components/myComponents/card/Card"
+              element={<CardGallery />}
             />
             <Route path="/colors" element={<Colors />} />
             <Route path="/about" element={<About />} />

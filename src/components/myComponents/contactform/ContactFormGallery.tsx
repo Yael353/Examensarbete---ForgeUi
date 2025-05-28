@@ -138,8 +138,6 @@ export default function ContactForm() {
 `;
 
 export const ContactFormGallery = () => {
-  //   const [showCode, setShowCode] = useState(false);
-
   return (
     <div>
       <h3 className="flex text-5xl justify-start font-bold pb-2">
@@ -158,18 +156,6 @@ export const ContactFormGallery = () => {
           <div className="w-full max-w-lg ">
             <ContactForm />
           </div>
-
-          {/* {showCode && (
-            <div className="mt-6 rounded-lg w-fit mx-auto text-left overflow-hidden">
-              <SyntaxHighlighter
-                language="tsx"
-                style={a11yDark}
-                customStyle={{ padding: "1rem", borderRadius: "0.5rem" }}
-              >
-                {contactFormCode}
-              </SyntaxHighlighter>
-            </div>
-          )} */}
         </div>
       </div>
 
