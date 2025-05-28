@@ -1,19 +1,16 @@
-import { Copy } from "lucide-react";
+import { Copy, Star } from "lucide-react";
 import { useState } from "react";
-import { useAnimation } from "framer-motion";
+import { Toaster, toast } from "sonner";
 
 export default function Colors() {
-  const [color, setColor] = useState("#FFD700");
+  const [color, setColor] = useState("#ffffff");
   const [format, setFormat] = useState("HEX");
   const [favorites, setFavorites] = useState<string[]>([]);
-  const colorBoxControls = useAnimation();
 
   const handleCopy = (value: string) => {
     navigator.clipboard.writeText(value);
-    colorBoxControls.start({
-      x: [0, -10, 10, -10, 10, 0],
-      transition: { duration: 0.4 },
-    });
+
+    toast(`Copied ${value} to clipboard`);
   };
 
   const hexToRgb = (hex: string) => {
@@ -73,61 +70,60 @@ export default function Colors() {
   const addToFavorites = () => {
     if (!favorites.includes(color)) {
       setFavorites([...favorites, color]);
-      colorBoxControls.start({
-        x: [0, -10, 10, -10, 10, 0],
-        transition: { duration: 0.4 },
-      });
     }
   };
 
   return (
-    <div>
+    <div className="px-4 py-12">
       <h3 className="text-5xl font-bold mb-4">Colors</h3>
-      <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-        Shape your palette, Copy with a click, and color your world.
+      <p className="text-2xl text-muted-foreground mb-10">
+        Shape your palette. Copy with a click. Color your world.
       </p>
-      <div className="min-h-screen bg-gradient-to-br border-2 rounded-md p-8 flex flex-col items-center space-y-10">
-        {/* Färgruta */}
-        <div className="w-full max-w-xl rounded-xl overflow-hidden border-4 border-gold shadow-2xl transition-all duration-300">
+
+      {/* Färgvisning */}
+      <div className="min-h-screen flex flex-col items-center space-y-12">
+        <div className="w-full max-w-3xl rounded-3xl overflow-hidden border-[6px] border-gold shadow-2xl relative group">
           <div
-            className="w-full h-60 transition-all duration-500"
+            className="w-full h-72 transition-all duration-700"
             style={{
               background: `linear-gradient(135deg, ${color}, #000)`,
             }}
           />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition rounded-3xl"></div>
         </div>
 
         {/* Kontrollpanel */}
-        <div className="w-full max-w-xl bg-popover backdrop-blur rounded-xl p-6 border border-border shadow-inner space-y-6 transition">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xl font-mono text-foreground flex-1 break-words">
+        <div className="w-full max-w-3xl bg-accent/80 backdrop-blur-md rounded-3xl p-8 border border-gold shadow-2xl space-y-8 transition">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="text-2xl font-mono text-foreground flex-1 break-words select-all tracking-widest">
               {getFormattedColor()}
             </span>
-            <div className="flex">
+            <div className="flex gap-3">
               <button
                 onClick={() => handleCopy(getFormattedColor())}
-                className="top-2 right-2 pr-4 pt-2 text-foreground hover:text-gold transition"
+                className="p-4 rounded-full bg-gradient-to-tr from-background to-primary text-gold hover:from-primary hover:to-background transition shadow-lg border border-gold flex items-center justify-center"
                 aria-label="Copy to clipboard"
               >
-                <Copy size={40} />
+                <Copy className="w-7 h-7" />
               </button>
 
               <button
                 onClick={addToFavorites}
-                className="px-4 py-2 rounded bg-background text-gold font-bold hover:bg-primary transition"
+                className="p-4 rounded-full bg-gradient-to-tr from-background to-primary text-gold hover:from-primary hover:to-background transition shadow-lg border border-gold flex items-center justify-center"
               >
-                ★
+                <Star className="w-7 h-7" fill="currentColor" stroke="none" />
               </button>
             </div>
           </div>
 
-          {/* Formatval */}
-          <div className="flex items-center gap-4">
-            <label className="text-foreground font-cinzel">Format:</label>
+          <div className="flex items-center gap-5">
+            <label className="text-foreground font-cinzel text-xl">
+              Format:
+            </label>
             <select
               value={format}
               onChange={(e) => setFormat(e.target.value)}
-              className="p-2 rounded border border-border bg-background text-foreground focus:ring-2 focus:ring-gold transition"
+              className="p-3 rounded-xl border border-gold bg-background text-foreground focus:ring-2 focus:ring-gold transition shadow-inner"
             >
               <option value="HEX">HEX</option>
               <option value="RGB">RGB</option>
@@ -135,24 +131,23 @@ export default function Colors() {
             </select>
           </div>
 
-          {/* Färginput */}
           <input
             type="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            className="w-full h-14 rounded cursor-pointer border border-border shadow-inner"
+            className="w-full h-16 rounded-xl cursor-pointer border border-gold shadow-inner transition"
           />
         </div>
 
         {/* Favoriter */}
         {favorites.length > 0 && (
-          <div className="w-full max-w-xl bg-popover backdrop-blur border border-border rounded-lg p-4 space-y-4 shadow-inner">
-            <h2 className="text-lg font-cinzel text-gold">Favoriter</h2>
-            <div className="grid grid-cols-5 sm:grid-cols-8 gap-3">
+          <div className="w-full max-w-3xl bg-popover/80 backdrop-blur-md border border-gold rounded-3xl p-6 space-y-5 shadow-2xl transition">
+            <h2 className="text-2xl font-cinzel text-gold mb-3">Favoriter</h2>
+            <div className="grid grid-cols-5 sm:grid-cols-8 gap-4">
               {favorites.map((fav, index) => (
                 <div
                   key={index}
-                  className="w-12 h-12 rounded shadow border border-border cursor-pointer transition hover:scale-105"
+                  className="w-14 h-14 rounded-xl shadow-lg border border-gold cursor-pointer transition hover:scale-110 hover:ring-2 hover:ring-gold"
                   style={{ background: fav }}
                   title={fav}
                   onClick={() => {
@@ -165,6 +160,8 @@ export default function Colors() {
           </div>
         )}
       </div>
+
+      <Toaster position="top-right" />
     </div>
   );
 }

@@ -14,7 +14,7 @@ import { CardGallery } from "./components/myComponents/card/CardGallery";
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider >
       <div className="min-h-screen bg-background text-foreground">
         <Routes>
           <Route path="/" element={<Home />} />
