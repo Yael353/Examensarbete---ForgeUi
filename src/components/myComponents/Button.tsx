@@ -240,18 +240,18 @@ export default function FancyButtonGallery() {
   };
 
   return (
-    <div className="max-w-full mx-auto p-6">
+    <div className="max-w-full mx-auto md:p-6">
       <h3 className="flex text-5xl text-accent-foreground/70 justify-stard font-bold pb-2">
         Buttons
       </h3>
       <p className="text-2xl pb-4 text-accent-foreground/70">
         A variety of buttons to explore and modify at your command 🔥{" "}
       </p>
-      <div className="grid grid-cols-3 gap-6 mb-6 border-2 p-4 rounded-md">
+      <div className="grid md:grid-cols-3 gap-6 mb-6 border-2 bg-accent p-4 rounded-md">
         {buttons.map((btn) => (
           <div
             key={btn.id}
-            className="flex justify-evenly border-2 bg-primary p-8"
+            className="flex justify-evenly border-2 bg-primary rounded-xl p-8"
           >
             <div onClick={() => setActiveId(btn.id)} className="cursor-pointer">
               {btn.preview}
@@ -261,7 +261,7 @@ export default function FancyButtonGallery() {
       </div>
 
       {activeId !== null && (
-        <div className="border bg-primary rounded p-4 shadow-lg">
+        <div className="border bg-accent rounded p-4 shadow-lg">
           <div className="flex justify-between items-center mb-2">
             <h3 className="font-semibold">Code</h3>
             <button

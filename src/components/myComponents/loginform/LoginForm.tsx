@@ -10,13 +10,11 @@ export const LoginForm = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
- 
     console.log("Login with:", { email, password });
   };
 
-  
   const handleForgotPassword = () => {
-    alert("Forgott password - Handle navigation here");
+    alert("Forgot password - Handle navigation here");
   };
 
   const handleCreateAccount = () => {
@@ -28,6 +26,11 @@ export const LoginForm = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
+      whileHover={{
+        scale: 1.02,
+        boxShadow: "0 0 20px rgba(255, 255, 255, 0.15)",
+        transition: { duration: 0.3 },
+      }}
       className="max-w-md mx-auto p-8 rounded-2xl shadow-xl border bg-background text-foreground"
     >
       <h2 className="text-3xl font-bold text-center mb-6">Log in</h2>
@@ -85,7 +88,7 @@ export const LoginForm = () => {
 
         <Button
           type="submit"
-          className="bg-popover text-foreground w-full text-lg font-semibold transition-all duration-300 hover:scale-[1.02] focus-visible:ring-4 focus-visible:ring-accent/60"
+          className="bg-popover text-foreground w-full text-lg font-semibold transition-all duration-300 hover:scale-[1.03] focus-visible:ring-4 focus-visible:ring-accent/60"
         >
           Logga in
         </Button>

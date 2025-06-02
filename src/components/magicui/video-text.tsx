@@ -72,11 +72,11 @@ export function VideoText({
   muted = true,
   loop = true,
   preload = "auto",
-  fontSize = 2.5,
+  fontSize = 4,
   fontWeight = "semibold",
   textAnchor = "middle",
   dominantBaseline = "middle",
-  fontFamily = "sans-serif",
+  fontFamily = "font-cinzel",
   as: Component = "div",
 }: VideoTextProps) {
   const [svgMask, setSvgMask] = useState("");
@@ -123,7 +123,7 @@ export function VideoText({
           preload={preload}
           playsInline
           style={{
-            objectPosition: "center 90%", // Justera videons visning här
+            objectPosition: "center 100%",
           }}
         >
           <source src={src} />

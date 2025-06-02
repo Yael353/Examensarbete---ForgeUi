@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="relative w-full md:py-20 py-10 flex flex-col items-center justify-center overflow-hidden rounded-md">
       {/* Sparkles — täcker hela headern */}
-      <div className="absolute left-0 w-full h-[50rem] z-0 top-20">
+      <div className="absolute left-0 w-full px-10 md:h-[50rem] h-[2rem] z-0 md:top-20 top-10">
         <SparklesCore
           background="transparent"
           minSize={1}
@@ -34,14 +34,11 @@ function Home() {
         </h1>
         <VideoText
           src="/fire-video.mp4"
-          className="relative md:text-2xl lg:text-4xl py-4 mt-10 z-20 text-foreground font-cinzel min-h-[70px]"
+          className="relative py-4 mt-10 z-20 text-foreground min-h-[70px]"
         >
           Craft components — forge experiences — rule the web
         </VideoText>
 
-        {/* <p className="md:text-2xl lg:text-4xl py-4 z-20 text-foreground font-cinzel">
-          Hammer your Code and forge your Website with fire!
-        </p> */}
 
         {/* Blåa linjer */}
         <div className="w-[60rem] h-fit relative sm:w-[50%] pt-4">

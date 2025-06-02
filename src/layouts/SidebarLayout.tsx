@@ -7,61 +7,59 @@ import { Outlet } from "react-router-dom";
 
 export default function SidebarLayout() {
   return (
-    <div>
+    <div className="bg-background ">
       <Nav />
-      <div className="bg-background min-h-screen">
-        <div className="flex z-40">
-          <Sidebar>
-            <SidebarBody>
-              <div className="space-y-2 p-6">
-                <h3 className="font-cinzel text-gold text-sm  uppercase tracking-widest pt-8">
-                  Views
-                </h3>
+      <div className="flex z-40 min-h-[calc(100vh-80px)]">
+        <Sidebar>
+          <SidebarBody>
+            <div className="space-y-2 p-6">
+              <h3 className="font-cinzel text-gold text-sm  uppercase tracking-widest pt-8">
+                Views
+              </h3>
 
-                <div className="-space-y-2">
-                  <SidebarLink label="About" to="/about" />
-                  <SidebarLink label="Documentation" to="documentation" />
-                  <SidebarLink label="Colors" to="/colors" />
-                </div>
-
-                <h3 className="font-cinzel text-sm text-gold uppercase tracking-widest pt-8">
-                  Components
-                </h3>
-
-                <div className="-space-y-3">
-                  <SidebarLink
-                    label="Buttons"
-                    to="/components/myComponents/Button"
-                  />
-                  <SidebarLink
-                    label="Heading"
-                    to="/components/myComponents/Heading"
-                  />
-                  <SidebarLink
-                    label="Contact Form"
-                    to="/components/myComponents/contactform/ContactForm"
-                  />
-                  <SidebarLink
-                    label="Login Form"
-                    to="/components/myComponents/loginform/LoginForm"
-                  />
-                  <SidebarLink
-                    label="Card"
-                    to="/components/myComponents/card/Card"
-                  />
-                  {/* Lägg till fler komponent-länkar här */}
-                </div>
-                <div className="pt-20">
-                <SidebarLink label="Home" to="/" />
-                </div>
+              <div className="-space-y-2">
+                <SidebarLink label="About" to="/about" />
+                <SidebarLink label="Documentation" to="documentation" />
+                <SidebarLink label="Colors" to="/colors" />
               </div>
-            </SidebarBody>
-          </Sidebar>
 
-          <main className="flex-1 overflow-auto p-5 h-auto rounded-lg">
-            <Outlet />
-          </main>
-        </div>
+              <h3 className="font-cinzel text-sm text-gold uppercase tracking-widest pt-8">
+                Components
+              </h3>
+
+              <div className="-space-y-3">
+                <SidebarLink
+                  label="Buttons"
+                  to="/components/myComponents/Button"
+                />
+                <SidebarLink
+                  label="Heading"
+                  to="/components/myComponents/Heading"
+                />
+                <SidebarLink
+                  label="Contact Form"
+                  to="/components/myComponents/contactform/ContactForm"
+                />
+                <SidebarLink
+                  label="Login Form"
+                  to="/components/myComponents/loginform/LoginForm"
+                />
+                <SidebarLink
+                  label="Card"
+                  to="/components/myComponents/card/CardGallery"
+                />
+                {/* Lägg till fler komponent-länkar här */}
+              </div>
+              <div className="pt-20">
+                <SidebarLink label="Home" to="/" />
+              </div>
+            </div>
+          </SidebarBody>
+        </Sidebar>
+
+        <main className="flex-1 overflow-auto p-5 h-auto rounded-lg">
+          <Outlet />
+        </main>
       </div>
     </div>
   );

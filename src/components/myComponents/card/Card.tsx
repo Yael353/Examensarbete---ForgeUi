@@ -6,6 +6,7 @@ interface CardProps {
   imageAlt: string;
   text: string;
   className?: string;
+  small?: boolean;
 }
 
 export default function Card({
@@ -14,6 +15,7 @@ export default function Card({
   imageAlt,
   text,
   className,
+  small = false,
 }: CardProps) {
   return (
     <article
@@ -30,12 +32,26 @@ export default function Card({
         <img
           src={image}
           alt={imageAlt}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+          className={cn(
+            "w-full object-cover transition-transform duration-500 group-hover:scale-105",
+            small ? "h-36" : "h-48"
+          )}
         />
       </div>
       <div className="p-4 space-y-2">
-        <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-        <p className="text-muted-foreground text-sm">{text}</p>
+        <h3
+          className={cn(
+            "font-semibold text-foreground",
+            small ? "text-base" : "text-lg"
+          )}
+        >
+          {title}
+        </h3>
+        <p
+          className={cn("text-muted-foreground", small ? "text-xs" : "text-sm")}
+        >
+          {text}
+        </p>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </article>

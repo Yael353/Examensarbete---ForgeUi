@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className=" text-foreground md:pt-20 pt-10 bg-primary">
-      <div className="max-w-7xl mx-auto flex justify-evenly gap-8">
+    <footer className=" text-foreground md:pt-20 py-10 bg-primary h-auto px-4">
+      <div className="max-w-7xl mx-auto flex md:flex-row flex-col justify-evenly gap-8">
         {/* About Components */}
         <div>
           <h3 className="text-xl font-semibold mb-4 font-cinzel">
@@ -46,7 +46,7 @@ function Footer() {
 
       {/* Copyright + Credits */}
       <div className="flex flex-col ">
-        <div className="text-xs">
+        <div className="text-xs pt-4 md:pt-0">
           <a
             href="https://www.vecteezy.com/free-videos/illuminated"
             className="hover:underline"
