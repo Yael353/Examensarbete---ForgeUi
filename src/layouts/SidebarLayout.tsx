@@ -7,10 +7,10 @@ import { Outlet } from "react-router-dom";
 
 export default function SidebarLayout() {
   return (
-    <div className="bg-background ">
-      <Nav />
-      <div className="flex z-40 min-h-[calc(100vh-80px)]">
-        <Sidebar>
+    <Sidebar>
+      <div className="bg-background ">
+        <Nav />
+        <div className="flex z-40 min-h-[calc(100vh-80px)]">
           <SidebarBody>
             <div className="space-y-2 p-6">
               <h3 className="font-cinzel text-gold text-sm  uppercase tracking-widest pt-8">
@@ -38,11 +38,11 @@ export default function SidebarLayout() {
                 />
                 <SidebarLink
                   label="Contact Form"
-                  to="/components/myComponents/contactform/ContactForm"
+                  to="/components/myComponents/contactform/ContactFormGallery"
                 />
                 <SidebarLink
                   label="Login Form"
-                  to="/components/myComponents/loginform/LoginForm"
+                  to="/components/myComponents/loginform/LoginFormGallery"
                 />
                 <SidebarLink
                   label="Card"
@@ -55,47 +55,12 @@ export default function SidebarLayout() {
               </div>
             </div>
           </SidebarBody>
-        </Sidebar>
 
-        <main className="flex-1 overflow-auto p-5 h-auto rounded-lg">
-          <Outlet />
-        </main>
+          <main className="flex-1 overflow-auto p-5 h-auto rounded-lg">
+            <Outlet />
+          </main>
+        </div>
       </div>
-    </div>
+    </Sidebar>
   );
-}
-
-{
-  /* <SidebarProvider animate>
-
-<div className="flex h-[calc(100vh-15rem)]">
-<Sidebar>
-<SidebarBody>
-
-<div className="space-y-4 p-6">
-<SidebarLink label="Home" to="/" />
-<h3 className="font-cinzel text-sm text-muted-foreground uppercase tracking-widest pt-8">
-Views
-</h3>
-<div className="space-y-2">
-<SidebarLink label="Documentation" view="docs" />
-<SidebarLink label="About" view="about" />
-<SidebarLink label="Colors" view="colors" />
-</div>
-<h3 className="font-cinzel text-sm text-muted-foreground uppercase tracking-widest pt-8">
-Components
-</h3>
-<div className="space-y-2">
-<SidebarLink
-label="Buttons"
-to="/components/myComponents/Button"
-/>
-</div>
-</div>
-</SidebarBody>
-</Sidebar> */
-}
-{
-  /* </div>
-</SidebarProvider> */
 }

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react"; //IconMenu2, om jag ändrar mig
 import { NavLink } from "react-router-dom";
 
 // interface Links {
@@ -137,12 +137,12 @@ export const MobileSidebar = ({
         )}
         {...props}
       >
-        <div className="flex justify-end z-20 w-full">
+        {/* <div className="flex justify-end z-20 w-full">
           <IconMenu2
             className="text-neutral-800 dark:text-neutral-200"
             onClick={() => setOpen(!open)}
           />
-        </div>
+        </div> */}
         <AnimatePresence>
           {open && (
             <motion.div

@@ -1,18 +1,11 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  // IconBoxAlignRightFilled,
-  // IconClipboardCopy,
-  // IconFileBroken,
-  // IconSignature,
-  // IconTableColumn,
-} from "@tabler/icons-react";
 import { motion } from "motion/react";
-
 import Card from "../myComponents/card/Card";
 import { LoginForm } from "../myComponents/loginform/LoginForm";
 import ContactForm from "../myComponents/contactform/ContactForm";
+import { NavLink } from "react-router-dom";
 
 export default function BentoGridThirdDemo() {
   return (
@@ -92,7 +85,7 @@ const SkeletonOne = () => {
     <div className="relative w-full h-[300px] mx-auto border-2 rounded-xl overflow-hidden">
       {/* Gold Shimmer */}
       <motion.div className="absolute" variants={pathTopLeft} animate="animate">
-        <a href="/components/myComponents/Button">
+        <NavLink to="/components/myComponents/Button">
           <motion.button
             type="button"
             className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-yellow-300 border-2 border-yellow-500 rounded-xl shadow-xl transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 group"
@@ -102,7 +95,7 @@ const SkeletonOne = () => {
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-0 group-hover:opacity-50 blur-sm animate-pulse"></span>
             <span className="relative z-10">Gold Shimmer</span>
           </motion.button>
-        </a>
+        </NavLink>
       </motion.div>
 
       {/* Pulse Edge */}
@@ -111,7 +104,7 @@ const SkeletonOne = () => {
         variants={pathTopRight}
         animate="animate"
       >
-        <a href="/components/myComponents/Button">
+        <NavLink to="/components/myComponents/Button">
           <motion.button
             type="button"
             className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-green-300 border-2 border-green-400 rounded-xl shadow-lg transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-green-500 group"
@@ -121,7 +114,7 @@ const SkeletonOne = () => {
             <span className="absolute inset-0 border-2 border-green-500 rounded-xl animate-ping group-hover:animate-none"></span>
             <span className="relative z-10">Pulse Edge</span>
           </motion.button>
-        </a>
+        </NavLink>
       </motion.div>
 
       {/* Blazing Glow */}
@@ -130,7 +123,7 @@ const SkeletonOne = () => {
         variants={pathBottomRight}
         animate="animate"
       >
-        <a href="/components/myComponents/Button">
+        <NavLink to="/components/myComponents/Button">
           <motion.button
             type="button"
             className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-orange-300 border-2 border-orange-400 rounded-xl shadow-2xl transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-orange-500 group"
@@ -141,7 +134,7 @@ const SkeletonOne = () => {
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
             <span className="relative z-10">Blazing Glow</span>
           </motion.button>
-        </a>
+        </NavLink>
       </motion.div>
 
       {/* Neon Laser */}
@@ -150,7 +143,7 @@ const SkeletonOne = () => {
         variants={pathBottomLeft}
         animate="animate"
       >
-        <a href="/components/myComponents/Button">
+        <NavLink to="/components/myComponents/Button">
           <motion.button
             type="button"
             className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-fuchsia-300 border-2 border-fuchsia-500 rounded-xl shadow-lg transition-all duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-500 group"
@@ -161,7 +154,7 @@ const SkeletonOne = () => {
             <span className="absolute bottom-0 right-0 h-0.5 w-0 bg-fuchsia-400 group-hover:w-full transition-all duration-500 ease-out delay-200"></span>
             <span className="relative z-10">Neon Laser</span>
           </motion.button>
-        </a>
+        </NavLink>
       </motion.div>
     </div>
   );
@@ -177,7 +170,9 @@ const SkeletonThree = () => {
     >
       <div className="flex w-full h-full items-center rounded-2xl justify-center overflow-auto no-scrollbar ">
         <div className="w-full h-full max-w-full">
-          <ContactForm />
+          <NavLink to="/components/myComponents/contactform/ContactFormGallery">
+            <ContactForm />
+          </NavLink>
         </div>
       </div>
     </motion.div>
@@ -193,7 +188,9 @@ const SkeletonTwo = () => {
     >
       <div className="flex w-full h-full items-center rounded-2xl justify-center overflow-auto no-scrollbar ">
         <div className="w-full h-full max-w-full">
-          <LoginForm />
+          <NavLink to="/components/myComponents/loginform/LoginFormGallery">
+            <LoginForm />
+          </NavLink>
         </div>
       </div>
     </motion.div>
@@ -203,7 +200,7 @@ const SkeletonFour = () => {
   const first = {
     initial: {
       x: 20,
-      rotate:-5,
+      rotate: -5,
     },
     hover: {
       x: 0,
@@ -228,7 +225,7 @@ const SkeletonFour = () => {
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
     >
       <motion.div variants={first} className="h-full w-1/3">
-        <a href="/components/myComponents/card/CardGallery">
+        <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="We Forge with React!"
             image="spring2.jpg"
@@ -236,11 +233,11 @@ const SkeletonFour = () => {
             text="Ctrl Z is my love language"
             className="h-full rounded-2xl"
           />
-        </a>
+        </NavLink>
       </motion.div>
 
       <motion.div variants={second} className="h-full w-1/3">
-        <a href="/components/myComponents/card/CardGallery">
+        <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="I love tailwind CSS!"
             image="spring.jpg"
@@ -248,11 +245,11 @@ const SkeletonFour = () => {
             text="Sensible"
             className="h-full rounded-2xl"
           />
-        </a>
+        </NavLink>
       </motion.div>
 
       <motion.div variants={second} className="h-full w-1/3">
-        <a href="/components/myComponents/card/CardGallery">
+        <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="Ctrl+Z is my love language."
             image="spring3.jpg"
@@ -260,7 +257,7 @@ const SkeletonFour = () => {
             text="Helpless"
             className="h-full rounded-2xl"
           />
-        </a>
+        </NavLink>
       </motion.div>
     </motion.div>
   );

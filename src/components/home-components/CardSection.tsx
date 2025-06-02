@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
   DraggableCardBody,
   DraggableCardContainer,
@@ -13,13 +14,13 @@ function CardSection() {
       <div className="relative w-full h-[500px] flex justify-center items-center overflow-hidden ">
         <DraggableCardContainer>
           <DraggableCardBody className="w-64 h-80 rotate-[2deg]">
-            <a href="/components/myComponents/Button">
+            <NavLink to="/components/myComponents/Button">
               <img
                 src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1887&auto=format&fit=crop"
                 alt="My Image"
                 className="w-full h-full object-cover rounded-md"
               />
-            </a>
+            </NavLink>
           </DraggableCardBody>
 
           <DraggableCardBody className="w-64 h-80 rotate-[-2deg]">

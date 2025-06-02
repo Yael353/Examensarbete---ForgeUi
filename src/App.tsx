@@ -11,40 +11,42 @@ import { HeadingGallery } from "./components/myComponents/headings/HeadingGallar
 import { ContactFormGallery } from "./components/myComponents/contactform/ContactFormGallery";
 import { LoginFormGallery } from "./components/myComponents/loginform/LoginFormGallery";
 import { CardGallery } from "./components/myComponents/card/CardGallery";
+import { ScrollToTop } from "./lib/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           {/* Alla routes som ska ha sidebar-layouten */}
           <Route element={<SidebarLayout />}>
             {/* <div className="bg-background "> */}
-              <Route path="/components" element={<Components />} />
-              <Route
-                path="/components/myComponents/Button"
-                element={<FancyButtonGallery />}
-              />
-              <Route
-                path="/components/myComponents/Heading"
-                element={<HeadingGallery />}
-              />
-              <Route
-                path="/components/myComponents/contactform/ContactForm"
-                element={<ContactFormGallery />}
-              />
-              <Route
-                path="/components/myComponents/loginform/LoginForm"
-                element={<LoginFormGallery />}
-              />
-              <Route
-                path="/components/myComponents/card/CardGallery"
-                element={<CardGallery />}
-              />
-              <Route path="/colors" element={<Colors />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/documentation" element={<Documentation />} />
+            <Route path="/components" element={<Components />} />
+            <Route
+              path="/components/myComponents/Button"
+              element={<FancyButtonGallery />}
+            />
+            <Route
+              path="/components/myComponents/Heading"
+              element={<HeadingGallery />}
+            />
+            <Route
+              path="/components/myComponents/contactform/ContactFormGallery"
+              element={<ContactFormGallery />}
+            />
+            <Route
+              path="/components/myComponents/loginform/LoginFormGallery"
+              element={<LoginFormGallery />}
+            />
+            <Route
+              path="/components/myComponents/card/CardGallery"
+              element={<CardGallery />}
+            />
+            <Route path="/colors" element={<Colors />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/documentation" element={<Documentation />} />
             {/* </div> */}
           </Route>
         </Routes>
