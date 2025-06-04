@@ -5,6 +5,7 @@ import Card from "../myComponents/card/Card";
 import { LoginForm } from "../myComponents/loginform/LoginForm";
 import ContactForm from "../myComponents/contactform/ContactForm";
 import { NavLink } from "react-router-dom";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function BentoGridThirdDemo() {
   return (
@@ -195,35 +196,40 @@ const SkeletonTwo = () => {
     </motion.div>
   );
 };
+
 const SkeletonFour = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   const first = {
     initial: {
-      x: 20,
-      rotate: -5,
+      x: isMobile ? 0 : 20,
+      rotate: isMobile ? 0 : -5,
     },
     hover: {
       x: 0,
       rotate: 0,
     },
   };
+
   const second = {
     initial: {
-      x: -20,
-      rotate: 5,
+      x: isMobile ? 0 : -20,
+      rotate: isMobile ? 0 : 5,
     },
     hover: {
       x: 0,
       rotate: 0,
     },
   };
+
   return (
     <motion.div
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
+      className="flex flex-1 flex-col md:flex-row w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] space-x-2"
     >
-      <motion.div variants={first} className="h-full w-1/3">
+      <motion.div variants={first} className="h-full md:w-1/3">
         <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="We Forge with React!"
@@ -235,7 +241,7 @@ const SkeletonFour = () => {
         </NavLink>
       </motion.div>
 
-      <motion.div variants={second} className="h-full w-1/3">
+      <motion.div variants={second} className="h-full md:w-1/3">
         <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="I love tailwind CSS!"
@@ -247,7 +253,7 @@ const SkeletonFour = () => {
         </NavLink>
       </motion.div>
 
-      <motion.div variants={second} className="h-full w-1/3">
+      <motion.div variants={second} className="h-full md:w-1/3">
         <NavLink to="/components/myComponents/card/CardGallery">
           <Card
             title="Ctrl+Z is my love language."
@@ -261,6 +267,7 @@ const SkeletonFour = () => {
     </motion.div>
   );
 };
+
 const SkeletonFive = () => {
   const variants = {
     initial: {

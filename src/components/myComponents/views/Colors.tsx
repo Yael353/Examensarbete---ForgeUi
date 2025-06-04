@@ -1,6 +1,7 @@
 import { Copy, Star } from "lucide-react";
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
+import ColorPalette from "../ColorPalette";
 
 export default function Colors() {
   const [color, setColor] = useState("#ffffff");
@@ -81,7 +82,7 @@ export default function Colors() {
 
       {/* Färgvisning */}
       <div className="min-h-screen flex flex-col items-center space-y-12">
-        <div className="w-full max-w-3xl rounded-3xl overflow-hidden border-[6px] border-gold shadow-2xl relative group">
+        <div className="w-full max-w-3xl rounded-3xl overflow-hidden border border-gold shadow-2xl relative group">
           <div
             className="w-full h-72 transition-all duration-700"
             style={{
@@ -158,9 +159,11 @@ export default function Colors() {
             </div>
           </div>
         )}
+        <Toaster position="top-right" />
+        <div className="w-full flex justify-center">
+          <ColorPalette />
+        </div>
       </div>
-
-      <Toaster position="top-right" />
     </div>
   );
 }

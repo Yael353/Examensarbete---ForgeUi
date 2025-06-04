@@ -46,12 +46,12 @@ export default function Card({ title, image, imageAlt, text, className }: CardPr
 export const CardGallery = () => {
   return (
     <div className="">
-      <h3 className="flex text-5xl justify-start font-bold pb-2">Cards</h3>
-      <p className="text-2xl text-accent-foreground/70 pb-5 font-merriweather">
+      <h3 className="flex text-5xl justify-start font-bold pb-2 mx-4">Cards</h3>
+      <p className="text-2xl text-accent-foreground/70 pb-5 font-merriweather mx-4">
         Elegant, accessible, and responsive cards for modern interfaces.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-6 border-2 rounded-md p-6 mr-4">
+      <div className="flex flex-col md:flex-row gap-6 border-2 justify-between rounded-md p-6 mx-4">
         <div className="w-full sm:w-[300px]">
           <Card
             title="Modern Card"
@@ -86,11 +86,11 @@ export const CardGallery = () => {
         </div>
       </div>
 
-      <div className="mt-16 w-auto mr-4">
+      <div className="mt-16 mx-4">
         <InstallBlock command={`npm install clsx`} />
       </div>
 
-      <div className="max-w-full mx-auto pt-16 mr-4">
+      <div className="pt-16 mx-4">
         <h4 className="text-2xl font-bold mb-4">components/ui/Card.tsx</h4>
         <ExpandableCodeBlock code={cardComponentCode} previewLines={12} />
       </div>

@@ -1,14 +1,12 @@
-// import { ModeToggle } from "@/components/darkmode/Mode-Toggle";
 import Nav from "@/components/home-components/Nav";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-// import { SparklesCore } from "@/components/ui/Sparkles";
 
 import { Outlet } from "react-router-dom";
 
 export default function SidebarLayout() {
   return (
     <Sidebar>
-      <div className="bg-background ">
+      <div className="bg-background">
         <Nav />
         <div className="flex z-40 min-h-[calc(100vh-80px)]">
           <SidebarBody>
@@ -48,15 +46,19 @@ export default function SidebarLayout() {
                   label="Card"
                   to="/components/myComponents/card/CardGallery"
                 />
+                <SidebarLink
+                  label="CubeCarousel"
+                  to="/components/myComponents/carousel/CubeCarousel"
+                />
                 {/* Lägg till fler komponent-länkar här */}
               </div>
-              <div className="pt-20">
+              {/* <div className="pt-20">
                 <SidebarLink label="Home" to="/" />
-              </div>
+              </div> */}
             </div>
           </SidebarBody>
 
-          <main className="flex-1  h-auto rounded-lg">
+          <main className="flex-1 h-auto rounded-lg">
             <Outlet />
           </main>
         </div>

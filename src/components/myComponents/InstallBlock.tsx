@@ -14,7 +14,7 @@ export const InstallBlock: React.FC<InstallBlockProps> = ({ command }) => {
   };
 
   return (
-    <div className="mt-16 w-auto relative">
+    <div className="mt-8 w-auto relative">
       <h2 className="text-2xl font-bold mb-4">Install dependency</h2>
 
       <div className="relative rounded-md">

@@ -116,8 +116,6 @@ export const LoginForm = () => {
 `;
 
 export const LoginFormGallery = () => {
-  //   const [showCode, setShowCode] = useState(false);
-
   return (
     <div className="mx-4">
       <h3 className="text-5xl font-bold mb-4">Login Form</h3>
@@ -136,9 +134,7 @@ export const LoginFormGallery = () => {
       </div>
 
       <div className="max-w-full mx-auto pt-16">
-        <h4 className="text-2xl font-bold mb-4">
-          components/ui/loginForm.tsx
-        </h4>
+        <h4 className="text-xl font-bold mb-4">components/ui/loginForm.tsx</h4>
         <ExpandableCodeBlock code={loginFormCode} previewLines={12} />
         <h4 className="text-xl font-bold mb-4">components/ui/Input.tsx</h4>
         <ExpandableCodeBlock code={labelCode} previewLines={5} />

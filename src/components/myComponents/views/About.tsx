@@ -34,9 +34,9 @@ const About = () => {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.7 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl shadow-2xl"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl bg-bakground"
       >
-        <div className="p-6 border border-border rounded-xl bg-card shadow-sm text-center">
+        <div className="p-6 border border-border rounded-xl bg-card shadow-2xl text-center">
           <h3 className="text-2xl font-bold text-gold mb-2">
             Modern & Stylish
           </h3>
@@ -46,7 +46,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="p-6 border border-border rounded-xl bg-card shadow-sm text-center">
+        <div className="p-6 border border-border rounded-xl bg-card shadow-2xl text-center">
           <h3 className="text-2xl font-bold text-gold mb-2">
             Flexible & Customizable
           </h3>
@@ -56,7 +56,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="p-6 border border-border rounded-xl bg-card shadow-sm text-center">
+        <div className="p-6 border border-border rounded-xl bg-card shadow-2xl text-center">
           <h3 className="text-2xl font-bold text-gold mb-2">
             Production-Ready
           </h3>
@@ -77,7 +77,7 @@ const About = () => {
         <Link to="/components">
           <Button
             size="lg"
-            className="text-2xl font-semibold font-cinzel p-4 bg-accent border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
+            className="text-2xl font-semibold font-cinzel p-4 bg-primary border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
           >
             Browse Components
           </Button>
@@ -86,7 +86,7 @@ const About = () => {
           <Button
             variant="outline"
             size="lg"
-            className="text-2xl font-semibold font-cinzel p-4 bg-accent border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
+            className="text-2xl font-semibold font-cinzel p-4 bg-primary border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
           >
             Documentation
           </Button>
@@ -115,7 +115,7 @@ const About = () => {
         >
           <Button
             size="lg"
-            className="text-2xl font-semibold font-cinzel p-4 bg-accent border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
+            className="text-2xl font-semibold font-cinzel p-4 bg-primary border-2 border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300"
           >
             <Github className="w-6 h-6" />
             Star & Contribute

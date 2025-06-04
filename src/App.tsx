@@ -12,6 +12,8 @@ import { ContactFormGallery } from "./components/myComponents/contactform/Contac
 import { LoginFormGallery } from "./components/myComponents/loginform/LoginFormGallery";
 import { CardGallery } from "./components/myComponents/card/CardGallery";
 import { ScrollToTop } from "./lib/ScrollToTop";
+import { CarouselGallery } from "./components/myComponents/carousel/CarouselGallery";
+// import CubeCarousel from "./components/myComponents/carousel/CubeCarousel";
 
 function App() {
   return (
@@ -43,6 +45,10 @@ function App() {
             <Route
               path="/components/myComponents/card/CardGallery"
               element={<CardGallery />}
+            />
+            <Route
+              path="/components/myComponents/carousel/CubeCarousel"
+              element={<CarouselGallery />}
             />
             <Route path="/colors" element={<Colors />} />
             <Route path="/about" element={<About />} />

@@ -23,7 +23,7 @@ function BodySection() {
                 to="/components"
                 className="flex justify-center items-center"
               >
-                <button className="text-2xl font-semibold font-cinzel p-4 bg-accent border border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:ring-[rgb(var(--gold))] transition duration-300">
+                <button className="text-2xl font-semibold font-cinzel p-4 bg-background border border-gold text-foreground rounded-lg shadow-md hover:ring-2 hover:border-gold transition duration-300">
                   Explore Components
                 </button>
               </NavLink>
