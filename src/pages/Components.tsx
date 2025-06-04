@@ -1,120 +1,119 @@
-function Components() {
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Box, Layers, FormInput, Github } from "lucide-react";
+
+const stats = [
+  { label: "Components Available", value: 6 },
+  { label: "Contributors", value: 1 },
+  { label: "Last Update", value: "11/06-2025" },
+];
+
+const categories = [
+  {
+    title: "Buttons",
+    description: "Stylish, animated and interactive buttons.",
+    icon: <Box className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/Button",
+  },
+  {
+    title: "Headings",
+    description: "Typography components for modern UIs.",
+    icon: <Layers className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/Heading",
+  },
+  {
+    title: "Forms",
+    description: "Contact forms, login forms and more.",
+    icon: <FormInput className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/contactform/ContactFormGallery",
+  },
+  {
+    title: "Forms",
+    description: "Contact forms, login forms and more.",
+    icon: <FormInput className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/contactform/ContactFormGallery",
+  },
+];
+
+const Components = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-      {/* Original blå knapp */}
-      <div>
+    <div className="px-6 py-20 max-w-7xl mx-auto space-y-16">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-5xl font-extrabold font-cinzel text-center"
+      >
+        Explore <span className="text-gold">Components</span>
+      </motion.h1>
 
-        <button
-          type="button"
-          className="px-8 py-3 text-yellow-400 font-semibold border border-yellow-500 rounded-full shadow-[0_0_20px_rgba(255,215,0,0.5)] bg-black hover:bg-yellow-500 hover:text-black transition"
-        >
-          Golden Path
-        </button>
+      {/* Grid of Categories */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 ">
+        {categories.map((category, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.15, duration: 0.5 }}
+            className="p-6 rounded-xl hover:ease-out border border-border bg-background shadow hover:shadow-lg transition"
+          >
+            <div className="flex items-center mb-4 ">{category.icon}</div>
+            <h2 className="text-2xl font-bold mb-2">{category.title}</h2>
+            <p className="text-muted-foreground mb-4">{category.description}</p>
+            <Link to={category.link}>
+              <Button className="text-foreground bg-primary border border-gold hover:bg-accent hover:text-foreground">
+                Explore
+              </Button>
+            </Link>
+          </motion.div>
+        ))}
       </div>
 
-      {/* Neon Glow */}
-      <div>
-        <button
-          type="button"
-          className="px-6 py-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-yellow-500 rounded-lg shadow-[0_0_20px_rgba(255,215,0,0.5)] hover:bg-yellow-500 hover:text-black transition"
-        >
-          Neon Forge
-        </button>
+      {/* Fun Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        {stats.map((stat, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1, duration: 0.6 }}
+            className="p-4 bg-accent rounded-lg border border-border"
+          >
+            <div className="text-4xl font-extrabold text-gold">
+              {stat.value}
+            </div>
+            <div className="text-muted-foreground">{stat.label}</div>
+          </motion.div>
+        ))}
       </div>
 
-      {/* Laser Border */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-6 py-3 font-bold text-white bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 bg-[length:200%_auto] bg-right border-2 border-yellow-400 rounded-lg shadow-lg transition-all duration-500 ease-out hover:bg-left focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400"
-          aria-label="Animated Gradient Button"
-        >
-          <span className="relative z-10">Launch Forge 🔥</span>
-        </button>
-      </div>
-
-      {/* Gold Shimmer */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-yellow-300 border-2 border-yellow-500 rounded-xl shadow-xl transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 group"
-          aria-label="Gold Shimmer Button"
-        >
-          <span className="absolute inset-0 bg-gradient-to-br from-yellow-700 to-yellow-900 opacity-80 group-hover:opacity-100 transition duration-300"></span>
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-0 group-hover:opacity-50 blur-sm animate-pulse"></span>
-          <span className="relative z-10">Gold Shimmer</span>
-        </button>
-      </div>
-
-      {/* Cyber Gradient */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-6 py-3 font-bold text-white bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 border-2 border-yellow-400 rounded-lg shadow-lg transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 animate-pulse"
-          aria-label="Pulsating Gradient Button"
-        >
-          <span className="relative z-10">🔥 Ignite Forge</span>
-        </button>
-      </div>
-
-      {/* Pulse Edge */}
-      <div>
-        <button
-          type="button"
-          className="group relative inline-flex items-center justify-center px-6 py-3 font-bold text-gray-100 bg-black border border-gray-800 rounded-lg shadow-[inset_0_4px_8px_rgba(255,255,255,0.05),0_4px_8px_rgba(0,0,0,0.9)]
- transition-all duration-300 ease-out hover:shadow-[0_0_60px_rgba(0,255,255,0.2)] active:translate-y-1 active:shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),0_2px_4px_rgba(0,0,0,0.6)] focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-500"
-          aria-label="Ghost Toggle Button"
-        >
-          <span className="relative z-10 transition-all duration-300 ease-out group-hover:opacity-0 group-hover:translate-y-[-10px]">
-            👻 Ghost Mode
+      {/* Contribute CTA */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+        className="text-center space-y-4 pt-10 flex flex-col justify-center items-center"
+      >
+        <p className="text-2xl text-muted-foreground">
+          Got a cool component idea? Help us grow{" "}
+          <span className="font-cinzel font-bold">
+            Forge<span className="text-gold">UI</span>!
           </span>
-          <span className="absolute z-10 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 text-cyan-400">
-            💀 Spooky!
-          </span>
-        </button>
-      </div>
-
-      {/* Blazing Glow */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-6 py-3 font-bold text-white bg-[#0a0a0a] border border-gray-700 rounded-lg shadow-[inset_0_4px_8px_rgba(255,255,255,0.05),0_4px_8px_rgba(0,0,0,0.9)] transition-all duration-300 ease-in-out hover:translate-y-0.5 active:translate-y-1 active:shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),0_2px_4px_rgba(0,0,0,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
-          aria-label="3D Button"
+          !
+        </p>
+        <a
+          href="https://github.com/ditt-repo-url"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span className="relative z-10">3D Inpress</span>
-        </button>
-      </div>
-
-      {/* Bounce Laser */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-7 py-3 overflow-hidden font-bold text-fuchsia-300 border-2 border-fuchsia-500 rounded-xl shadow-lg transition-all duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-500 group animate-bounce"
-          aria-label="Neon Bounce Laser Button"
-        >
-          <span className="absolute inset-0 bg-gradient-to-br from-fuchsia-800 to-fuchsia-950 opacity-90 group-hover:opacity-100 transition duration-300"></span>
-          <span className="absolute top-0 left-0 h-0.5 w-0 bg-fuchsia-400 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span className="absolute bottom-0 right-0 h-0.5 w-0 bg-fuchsia-400 group-hover:w-full transition-all duration-500 ease-out delay-200"></span>
-          <span className="relative z-10">Bounce Laser</span>
-        </button>
-      </div>
-
-      {/* Shimmer Pulse */}
-      <div>
-        <button
-          type="button"
-          className="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold text-white border-2 border-cyan-400 rounded-2xl shadow-lg transition duration-300 ease-out focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-500 group"
-          aria-label="Text Shimmer Pulse Button"
-        >
-          <span className="absolute inset-0 bg-cyan-950 opacity-90 group-hover:opacity-100 transition duration-300"></span>
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-70 blur-sm animate-pulse"></span>
-          <span className="relative z-10 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-[shimmer_2s_infinite]">
-            Shimmer Pulse
-          </span>
-        </button>
-      </div>
+          <Button className="flex gap-2 text-lg font-semibold bg-gold text-background hover:border-2 border-background">
+            <Github className="w-5 h-5" /> Contribute on GitHub
+          </Button>
+        </a>
+      </motion.div>
     </div>
   );
-}
+};
 
 export default Components;

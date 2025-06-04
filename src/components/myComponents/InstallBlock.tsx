@@ -1,19 +1,16 @@
 import { Copy } from "lucide-react";
-import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { toast, Toaster } from "sonner";
 
 type InstallBlockProps = {
   command: string;
 };
 
 export const InstallBlock: React.FC<InstallBlockProps> = ({ command }) => {
-  const [copied, setCopied] = useState(false);
-
   const handleCopy = () => {
     navigator.clipboard.writeText(command);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    toast.success("Copied command to clipboard!");
   };
 
   return (
@@ -42,13 +39,7 @@ export const InstallBlock: React.FC<InstallBlockProps> = ({ command }) => {
         >
           <Copy size={14} />
         </button>
-
-        {/* Copied-text */}
-        {copied && (
-          <span className="absolute top-2 right-10 text-green-400 text-sm">
-            Copied!
-          </span>
-        )}
+        <Toaster position="top-right" />
       </div>
     </div>
   );

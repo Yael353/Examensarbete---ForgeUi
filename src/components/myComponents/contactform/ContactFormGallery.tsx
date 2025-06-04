@@ -139,38 +139,35 @@ export default function ContactForm() {
 
 export const ContactFormGallery = () => {
   return (
-    <div>
-      <h3 className="flex text-5xl justify-start font-bold pb-2">
+    <div className="mx-4">
+      <h3 className="flex text-5xl text-accent-foreground/70 justify-stard font-bold pb-2">
         Contact Forms
       </h3>
-      <p className="text-2xl text-accent-foreground/70 pb-10">
+      <p className="text-2xl text-accent-foreground/70 pb-10  font-merriweather">
         Elegant, accessible, and responsive forms are essential for modern
         interfaces.
       </p>
 
-      <div className="flex flex-col items-start justify-start gap-6 border-2 rounded-md p-6">
-        <div
-          //   onClick={() => setShowCode(!showCode)}
-          className="cursor-pointer w-full flex justify-center bg-primary p-4 rounded-md"
-        >
-          <div className="w-full max-w-lg ">
+      <div className="flex flex-col items-start justify-start gap-6 border-2 rounded-md md:p-4">
+        <div className="cursor-pointer w-full flex justify-center bg-primary p-4 rounded-md">
+          <div className="w-full max-w-lg">
             <ContactForm />
           </div>
         </div>
       </div>
 
-      <div className="mt-16 w-auto">
+      <div className="mt-16 ">
         <InstallBlock command={`npm install framer-motion\nnpm install clsx`} />
       </div>
 
-      <div className="max-w-full mx-auto pt-16">
-        <h4 className="text-2xl font-bold mb-4">
+      <div className="max-w-full  pt-16">
+        <h4 className="text-xl font-bold mb-4">
           components/ui/ContactForm.tsx
         </h4>
         <ExpandableCodeBlock code={contactFormCode} previewLines={12} />
-        <h4 className="text-2xl font-bold mb-4">components/ui/Input.tsx</h4>
+        <h4 className="text-xl font-bold mb-6">components/ui/Input.tsx</h4>
         <ExpandableCodeBlock code={inputCode} previewLines={5} />
-        <h4 className="text-2xl font-bold mb-4">components/ui/TextArea.tsx</h4>
+        <h4 className="text-xl font-bold mb-6">components/ui/TextArea.tsx</h4>
         <ExpandableCodeBlock code={textAreaCode} previewLines={5} />
       </div>
     </div>

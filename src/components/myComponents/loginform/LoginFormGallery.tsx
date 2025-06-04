@@ -119,9 +119,9 @@ export const LoginFormGallery = () => {
   //   const [showCode, setShowCode] = useState(false);
 
   return (
-    <div>
+    <div className="mx-4">
       <h3 className="text-5xl font-bold mb-4">Login Form</h3>
-      <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+      <p className="text-2xl text-accent-foreground/70 pb-10  font-merriweather">
         Elegant and accessible login form with animation and responsive design.
       </p>
       <div className="flex flex-col items-start justify-start gap-6 border-2 rounded-md p-6">
@@ -130,21 +130,6 @@ export const LoginFormGallery = () => {
             <LoginForm />
           </div>
         </div>
-
-        {/* {showCode && (
-        <div
-        id="loginform-code"
-        className="max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden shadow-lg "
-        >
-        <SyntaxHighlighter
-        language="tsx"
-        style={a11yDark}
-        customStyle={{ padding: "1rem", borderRadius: "0.5rem" }}
-        >
-        {loginFormCode}
-        </SyntaxHighlighter>
-        </div>
-        )} */}
       </div>
       <div className="mt-16 w-auto">
         <InstallBlock command="npm install framer-motion" />
@@ -152,12 +137,12 @@ export const LoginFormGallery = () => {
 
       <div className="max-w-full mx-auto pt-16">
         <h4 className="text-2xl font-bold mb-4">
-          components/ui/ContactForm.tsx
+          components/ui/loginForm.tsx
         </h4>
         <ExpandableCodeBlock code={loginFormCode} previewLines={12} />
-        <h4 className="text-2xl font-bold mb-4">components/ui/Input.tsx</h4>
+        <h4 className="text-xl font-bold mb-4">components/ui/Input.tsx</h4>
         <ExpandableCodeBlock code={labelCode} previewLines={5} />
-        <h4 className="text-2xl font-bold mb-4">components/ui/TextArea.tsx</h4>
+        <h4 className="text-xl font-bold mb-4">components/ui/TextArea.tsx</h4>
         <ExpandableCodeBlock code={inputCode} previewLines={5} />
       </div>
     </div>

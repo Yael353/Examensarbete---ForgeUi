@@ -13,7 +13,7 @@ export default function SidebarLayout() {
         <div className="flex z-40 min-h-[calc(100vh-80px)]">
           <SidebarBody>
             <div className="space-y-2 p-6">
-              <h3 className="font-cinzel text-gold text-sm  uppercase tracking-widest pt-8">
+              <h3 className="font-cinzel font-extrabold text-gold text-lg text-shadow-2xs text-shadow-shadow  uppercase tracking-widest pt-8">
                 Views
               </h3>
 
@@ -23,7 +23,7 @@ export default function SidebarLayout() {
                 <SidebarLink label="Colors" to="/colors" />
               </div>
 
-              <h3 className="font-cinzel text-sm text-gold uppercase tracking-widest pt-8">
+              <h3 className="font-cinzel text-lg font-extrabold uppercase text-gold tracking-widest pt-8 text-shadow-2xs text-shadow-shadow">
                 Components
               </h3>
 
@@ -56,7 +56,7 @@ export default function SidebarLayout() {
             </div>
           </SidebarBody>
 
-          <main className="flex-1 overflow-auto p-5 h-auto rounded-lg">
+          <main className="flex-1  h-auto rounded-lg">
             <Outlet />
           </main>
         </div>

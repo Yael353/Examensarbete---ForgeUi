@@ -1,4 +1,3 @@
-// import CardSection from "@/components/home-components/CardSection";
 import BodySection from "../components/home-components/BodySection";
 import Hero from "../components/home-components/Hero";
 import Footer from "@/components/home-components/Footer";
@@ -11,7 +10,7 @@ function Home() {
     <div className="">
       <div className="flex items-center justify-between h-20 pr-4">
         <a href="/">
-          <img src="./forge2.png" alt="Forge Logo" className="w-50 h-15 pt-2" />
+          <img src="./forge2.png" alt="Forge Logo" className="w-40 h-15 pt-2" />
         </a>
         <div className="flex items-center gap-2">
           <ModeToggle />
@@ -20,7 +19,6 @@ function Home() {
       {/* <Nav/> */}
       <Hero />
       <BodySection />
-      {/* <CardSection /> */}
       <Layout />
       <Footer />
     </div>

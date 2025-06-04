@@ -2,6 +2,7 @@ import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Copy } from "lucide-react";
+import { Toaster, toast } from "sonner";
 
 type ExpandableCodeBlockProps = {
   code: string;
@@ -13,35 +14,32 @@ export const ExpandableCodeBlock: React.FC<ExpandableCodeBlockProps> = ({
   previewLines = 10,
 }) => {
   const [expanded, setExpanded] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const lines = code.split("\n");
   const visibleCode = expanded ? lines : lines.slice(0, previewLines);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    toast.success(`Copied code to clipboard`);
   };
 
   return (
     <div className="relative mb-10">
-      <div className="relative mb-10">
-        {/* Kodblock */}
+      <div className="relative mb-10 w-full overflow-x-auto max-w-full">
         <SyntaxHighlighter
           language="tsx"
-          wrapLongLines={true}
+          wrapLongLines
           style={anOldHope}
           customStyle={{
             padding: "1rem",
             borderRadius: "0.5rem",
             margin: 0,
             backgroundColor: "#2d2d2d",
+            wordBreak: "break-word",
           }}
         >
           {visibleCode.join("\n")}
         </SyntaxHighlighter>
-
         <button
           onClick={handleCopy}
           className="absolute top-2 right-2 pr-4 pt-2 text-white hover:text-cyan-400 transition"
@@ -49,12 +47,7 @@ export const ExpandableCodeBlock: React.FC<ExpandableCodeBlockProps> = ({
         >
           <Copy size={14} />
         </button>
-
-        {copied && (
-          <span className="absolute top-2 right-10 text-green-400 text-xs">
-            Copied!
-          </span>
-        )}
+        <Toaster position="top-right" />
       </div>
 
       {lines.length > previewLines && (

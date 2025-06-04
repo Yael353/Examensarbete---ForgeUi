@@ -34,7 +34,7 @@ export default function Card({
           alt={imageAlt}
           className={cn(
             "w-full object-cover transition-transform duration-500 group-hover:scale-105",
-            small ? "h-36" : "h-48"
+            small ? "h-24" : "h-48"
           )}
         />
       </div>

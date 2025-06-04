@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/lib/utils";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { motion } from "motion/react";
@@ -299,7 +298,7 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
         <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="spring2.jpg"
           alt="avatar"
           height="100"
           width="100"
@@ -326,7 +325,6 @@ const items = [
     description: <span className="text-lg">Pick and modify at your will!</span>,
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    // icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Login form",
@@ -335,7 +333,6 @@ const items = [
     ),
     header: <SkeletonTwo />,
     className: "md:col-span-1",
-    // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Contact form",
@@ -344,7 +341,6 @@ const items = [
     ),
     header: <SkeletonThree />,
     className: "md:col-span-1",
-    // icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Cards",
@@ -355,7 +351,6 @@ const items = [
     ),
     header: <SkeletonFour />,
     className: "md:col-span-2",
-    // icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 
   {
@@ -367,6 +362,5 @@ const items = [
     ),
     header: <SkeletonFive />,
     className: "md:col-span-1",
-    // icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
 ];

@@ -39,7 +39,6 @@ function Home() {
           Craft components — forge experiences — rule the web
         </VideoText>
 
-
         {/* Blåa linjer */}
         <div className="w-[60rem] h-fit relative sm:w-[50%] pt-4">
           <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[4px] w-3/4 blur-sm" />
@@ -49,30 +48,16 @@ function Home() {
         </div>
 
         <div className="py-6 relative">
-          <div className="text-2xl font-semibold font-cinzel max-w-5xl mx-auto text-center leading-relaxed">
+          <div className="text-3xl font-semibold font-merriweather max-w-5xl mx-auto text-center leading-relaxed">
             Welcome to ForgeUI — a component library where you shape websites
-            with powerful, handcrafted components, forged for performance and
-            designed to deliver{" "}
-            <span>
-              <ContainerTextFlip />
-            </span>{" "}
+            with powerful, handcrafted components, forged for performance,
+            designed to deliver
+            <span className="">
+              <ContainerTextFlip className="mr-2" />
+            </span>
             and complete digital experiences.
           </div>
         </div>
-
-        {/* Knappar */}
-        {/* <div className="flex gap-6 mt-10 w-[24rem]">
-          <a href="/components" className="flex-1">
-            <button className="w-full bg-background text-foreground border border-gold h-16 p-4 text-2xl font-bold font-cinzel rounded-lg shadow transition duration-300  hover:ring-[#FFD700] hover:scale-105">
-              Components
-            </button>
-          </a>
-          <a href="" className="flex-1">
-            <button className="w-full h-16 p-4 text-2xl font-bold italic bg-gold text-foreground rounded-lg font-cinzel shadow transition duration-300 hover:ring-2 hover:ring-white hover:scale-105">
-              Test
-            </button>
-          </a>
-        </div> */}
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ function BodySection() {
             Unleash the Power of Modern UI
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-            <p className="md:text-2xl text-xl text-foreground font-semibold text-center font-cinzel px-4">
+            <p className="md:text-2xl text-xl text-foreground font-semibold font-merriweather text-center font-cinzel px-4">
               Explore our cutting-edge UI tools and components, made to craft
               seamless, responsive, and captivating user experiences. Your next
               big idea starts here.

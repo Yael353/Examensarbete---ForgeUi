@@ -9,7 +9,6 @@ export default function Colors() {
 
   const handleCopy = (value: string) => {
     navigator.clipboard.writeText(value);
-
     toast(`Copied ${value} to clipboard`);
   };
 

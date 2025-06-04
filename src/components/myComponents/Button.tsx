@@ -2,6 +2,7 @@ import { Copy } from "lucide-react";
 import { useState, type JSX } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { toast, Toaster } from "sonner";
 
 interface ButtonItem {
   id: number;
@@ -236,18 +237,18 @@ export default function FancyButtonGallery() {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    alert("Koden kopierad till urklipp!");
+    toast.success("Button copied to clipboard");
   };
 
   return (
-    <div className="max-w-full mx-auto md:p-6">
-      <h3 className="flex text-5xl text-accent-foreground/70 justify-stard font-bold pb-2">
+    <div className="max-w-full mx-4 md:p-6">
+      <h3 className="flex text-5xl text-accent-foreground/70 justify-stard font-bold pb-2 ">
         Buttons
       </h3>
       <p className="text-2xl pb-4 text-accent-foreground/70">
         A variety of buttons to explore and modify at your command 🔥{" "}
       </p>
-      <div className="grid md:grid-cols-3 gap-6 mb-6 border-2 bg-accent p-4 rounded-md">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 border-2 bg-accent p-4 rounded-md">
         {buttons.map((btn) => (
           <div
             key={btn.id}
@@ -279,7 +280,7 @@ export default function FancyButtonGallery() {
           <SyntaxHighlighter
             language="javascript"
             style={anOldHope}
-            wrapLongLines={false}
+            wrapLongLines
             customStyle={{
               borderRadius: 8,
               fontSize: 14,
@@ -294,6 +295,7 @@ export default function FancyButtonGallery() {
           </SyntaxHighlighter>
         </div>
       )}
+      <Toaster position="top-right" />
     </div>
   );
 }

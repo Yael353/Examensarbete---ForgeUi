@@ -5,9 +5,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-background: oklch(0.95 0 0);
+  --color-background: oklch(98.5% 0.001 106.423);
   --color-foreground: oklch(0.145 0 0);
-  --color-primary: rgb(255, 248, 227);
+  --color-primary: oklch(96.9% 0.016 293.756);
   --color-primary-foreground: oklch(0.205 0 0);
   --color-popover: oklch(1 0 0);
   --color-popover-foreground: oklch(0.145 0 0);
@@ -17,6 +17,7 @@
   --color-gold: rgb(255, 215, 0);
   --color-border: oklch(0.922 0 0);
   --color-ring: oklch(0.556 0 0);
+  --color-shadow: oklch(86.9% 0.005 56.366);
 }
 
 @layer theme {
@@ -24,7 +25,7 @@
     --color-background: oklch(0.145 0 0);
     --color-primary: oklch(0.18 0 0);
     --color-primary-foreground: oklch(0.205 0 0);
-    --color-foreground: oklch(0.985 0 0);
+    --color-foreground: oklch(0.96 0 0);
     --color-accent: oklch(0.269 0 0);
     --color-accent-foreground: oklch(0.985 0 0);
     --color-color-primary: rgb(32, 40, 66);
@@ -41,18 +42,44 @@
   .font-cinzel {
     font-family: "Cinzel", serif;
   }
+
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-lato {
+    font-family: "Lato", sans-serif;
+  }
+
+  .font-open-sans {
+    font-family: "OpenSans", sans-serif;
+  }
+
+  .font-merriweather {
+    font-family: "Merriweather", serif;
+  }
+
+  .font-libre {
+    font-family: "Libre Baskerville", serif;
+  }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  :root {
+    --font-cinzel: "Cinzel", serif;
+  }
+
   body {
     @apply text-foreground;
     transition: background-color 0.3s ease;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    font-family: var(--font-cinzel), system-ui, sans-serif;
   }
   .dark body {
     background-color: oklch(0.145 0 0);
