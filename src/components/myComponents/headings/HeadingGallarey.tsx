@@ -129,7 +129,7 @@ export const HeadingGallery = () => {
   ];
 
   return (
-    <div>
+    <div className="md:mx-4">
       <h3 className="flex text-5xl justify-start font-bold pb-2">Headings</h3>
       <p className="text-2xl text-accent-foreground/70 pb-10 font-merriweather">
         Clear headings help users to find their way and follow the content with

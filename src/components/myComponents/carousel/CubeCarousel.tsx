@@ -20,13 +20,13 @@ export default function CubeCarousel() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4">
+    <div className="w-full py-2">
       {/* Ram */}
-      <div className="w-full max-w-2xl mx-auto p-4">
+      <div className="w-full py-2">
         {/* Ram */}
-        <div className="relative bg-gradient-to-br from-[#0A192F] to-[#112240] p-5 rounded-3xl border-2 border-gold shadow-2xl flex flex-col items-center">
+        <div className="relative bg-gradient-to-br from-primary to-accent p-5 rounded-3xl border-2 border-gold shadow-2xl flex flex-col items-center">
           {/* Bildyta */}
-          <div className="relative w-full md:w-[90%] mx-auto overflow-hidden h-64 sm:h-64 md:h-72 rounded-2xl flex items-center justify-center">
+          <div className="relative w-full md:w-[95%] mx-auto overflow-hidden h-64 sm:h-64 md:h-72 rounded-2xl flex items-center justify-center">
             <AnimatePresence>
               {images.map((img, i) => {
                 const isActive = i === index;
@@ -69,14 +69,14 @@ export default function CubeCarousel() {
             <button
               onClick={prevImage}
               aria-label="Previous image"
-              className="bg-primary text-foreground rounded-full p-3 shadow hover:border border-gold"
+              className="bg-primary text-foreground rounded-full p-3 shadow hover:border focus:outline-none focus:ring-2 focus:ring-gold border-gold"
             >
               ‹
             </button>
             <button
               onClick={nextImage}
               aria-label="Next image"
-              className="bg-primary text-foreground rounded-full p-3 shadow hover:border border-gold"
+              className="bg-primary text-foreground rounded-full p-3 focus:outline-none focus:ring-2 focus:ring-gold shadow hover:border border-gold"
             >
               ›
             </button>

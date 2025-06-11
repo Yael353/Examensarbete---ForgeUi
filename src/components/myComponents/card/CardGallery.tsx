@@ -52,7 +52,7 @@ export const CardGallery = () => {
       </p>
 
       <div className="flex flex-col md:flex-row gap-6 border-2 justify-between rounded-md p-6 mx-4">
-        <div className="w-full sm:w-[300px]">
+        <div className="w-full md:w-fit ">
           <Card
             title="Modern Card"
             image="/spring.jpg"
@@ -60,7 +60,7 @@ export const CardGallery = () => {
             text="This is a beautiful, accessible card with subtle animations and dark mode support."
           />
         </div>
-        <div className="w-full sm:w-[300px]">
+        <div className="w-full md:w-fit">
           <Card
             title="Elegant Design"
             image="/spring2.jpg"
@@ -68,7 +68,7 @@ export const CardGallery = () => {
             text="Perfect for product highlights, features, or galleries in your web projects."
           />
         </div>
-        <div className="w-full sm:w-[300px]">
+        <div className="w-full md:w-fit">
           <Card
             title="WCAG Ready"
             image="/spring3.jpg"
@@ -76,7 +76,7 @@ export const CardGallery = () => {
             text="Fully keyboard navigable, screen-reader friendly and optimized for all users."
           />
         </div>
-        <div className="w-full sm:w-[300px]">
+        <div className="w-full md:w-fit">
           <Card
             title="WCAG Ready"
             image="/spring3.jpg"

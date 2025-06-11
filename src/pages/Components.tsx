@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Box, Layers, FormInput, Github } from "lucide-react";
+import {
+  Box,
+  Layers,
+  FormInput,
+  Github,
+  CreditCard,
+  Images,
+} from "lucide-react";
 
 const stats = [
   { label: "Components Available", value: 6 },
@@ -23,16 +30,28 @@ const categories = [
     link: "/components/myComponents/Heading",
   },
   {
-    title: "Forms",
-    description: "Contact forms, login forms and more.",
+    title: "Contact Form",
+    description: "Contact form as it should be, modern and stylish.",
     icon: <FormInput className="w-8 h-8 text-gold" />,
     link: "/components/myComponents/contactform/ContactFormGallery",
   },
   {
-    title: "Forms",
-    description: "Contact forms, login forms and more.",
+    title: "Log in Form",
+    description: "A smooth and modern login form.",
     icon: <FormInput className="w-8 h-8 text-gold" />,
-    link: "/components/myComponents/contactform/ContactFormGallery",
+    link: "/components/myComponents/loginform/LoginFormGallery",
+  },
+  {
+    title: "Card",
+    description: "Simple yet modern cards",
+    icon: <CreditCard className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/card/CardGallery",
+  },
+  {
+    title: "Cube Carousel",
+    description: "An animated carousel",
+    icon: <Images className="w-8 h-8 text-gold" />,
+    link: "/components/myComponents/carousel/CubeCarousel",
   },
 ];
 
@@ -103,7 +122,7 @@ const Components = () => {
           !
         </p>
         <a
-          href="https://github.com/ditt-repo-url"
+          href="https://github.com/Yael353"
           target="_blank"
           rel="noopener noreferrer"
         >

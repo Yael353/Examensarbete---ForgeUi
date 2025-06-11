@@ -12,7 +12,7 @@
   --color-popover: oklch(1 0 0);
   --color-popover-foreground: oklch(0.145 0 0);
   --color-muted-foreground: rgb(60, 60, 60);
-  --color-accent: oklch(80% 0.025 293.756); 
+  --color-accent: oklch(80% 0.025 293.756);
   --color-accent-foreground: oklch(0.205 0 0);
   --color-gold: oklch(80% 0.12 85);
   --color-border: oklch(0.922 0 0);

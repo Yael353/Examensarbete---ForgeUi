@@ -6,6 +6,7 @@ import { LoginForm } from "../myComponents/loginform/LoginForm";
 import ContactForm from "../myComponents/contactform/ContactForm";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "usehooks-ts";
+import CubeCarousel from "../myComponents/carousel/CubeCarousel";
 
 export default function BentoGridThirdDemo() {
   return (
@@ -270,62 +271,32 @@ const SkeletonFour = () => {
 
 const SkeletonFive = () => {
   const variants = {
-    initial: {
-      x: 0,
-    },
     animate: {
-      x: 10,
-      rotate: 5,
+      x: 5,
+      scale: 1.03,
       transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
+        duration: 0.4,
+        ease: "easeInOut",
       },
     },
   };
 
   return (
     <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      className="flex flex-1 w-auto h-[50%] rounded-2xl"
     >
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
-      >
-        <img
-          src="spring2.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
-      >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-      </motion.div>
+      <div className="flex w-full h-full items-center rounded-2xl justify-center pt-6">
+        <div className="w-full h-auto py-6">
+          <CubeCarousel />
+        </div>
+      </div>
     </motion.div>
   );
 };
+
 const items = [
   {
     title: "Buttons",
@@ -361,11 +332,14 @@ const items = [
   },
 
   {
-    title: "Text Summarization",
+    title: "Cube Carousel",
     description: (
-      <span className="text-lg">
-        Summarize your lengthy documents with AI technology.
-      </span>
+      <NavLink to="/components/myComponents/carousel/CubeCarousel">
+        <span className="text-lg">
+          Stunning 3D-like vertical flip carousel with images managed inside the
+          component..
+        </span>
+      </NavLink>
     ),
     header: <SkeletonFive />,
     className: "md:col-span-1",

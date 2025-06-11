@@ -109,7 +109,7 @@ const About = () => {
           help grow this toolkit together.
         </p>
         <a
-          href="https://github.com/your-github-repo"
+          href="https://github.com/Yael353"
           target="_blank"
           rel="noopener noreferrer"
         >

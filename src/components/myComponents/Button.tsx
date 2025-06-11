@@ -248,7 +248,7 @@ export default function FancyButtonGallery() {
       <p className="text-2xl pb-4 text-accent-foreground/70">
         A variety of buttons to explore and modify at your command 🔥{" "}
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 border-2 bg-accent p-4 rounded-md">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 border-2 bg-background p-4 rounded-md">
         {buttons.map((btn) => (
           <div
             key={btn.id}

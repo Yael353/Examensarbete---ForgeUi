@@ -9,15 +9,15 @@ import { useState } from "react";
 export const CubeCarousel = () => {
   const images = [
     {
-      src: "/spring1.jpg",
+      src: "Your picture here",
       alt: "Nature image",
     },
     {
-      src: "/spring2.jpg",
+      src: "Your picture here",
       alt: "City image",
     },
     {
-      src: "/spring3.jpg",
+      src: "Your picture here",
       alt: "Tech image",
     },
   ];
@@ -34,8 +34,11 @@ export const CubeCarousel = () => {
 
   return (
     <div className="w-full max-w-2xl mx-auto p-4">
-      <div className="relative bg-gradient-to-br from-[#0A192F] to-[#112240] p-8 rounded-3xl border-2 border-gold shadow-2xl flex flex-col items-center">
-        <div className="relative w-[90%] mx-auto overflow-hidden h-56 sm:h-64 md:h-72 rounded-2xl flex items-center justify-center">
+      <div className="relative bg-gradient-to-br from-[#0A192F] to-[#112240] p-8 rounded-3xl border-2 border-gold shadow-2xl flex 
+        flex-col items-center">
+        <div className="relative w-[90%] mx-auto overflow-hidden h-56 sm:h-64 md:h-72 rounded-2xl flex items-center 
+          justify-center"
+        >
           <AnimatePresence>
             {images.map((img, i) => {
               const isActive = i === index;
@@ -116,7 +119,7 @@ export const CubeCarousel = () => {
 
 export const CarouselGallery = () => {
   return (
-    <div className="mx-4">
+    <div className="mx-4 ">
       <h3 className="text-5xl font-bold mb-4">Cube Carousel</h3>
       <p className="text-2xl text-accent-foreground/70 pb-10 font-merriweather">
         Stunning 3D-like vertical flip carousel with images managed inside the

@@ -23,7 +23,7 @@ export default function Card({
       aria-label={`Kort med titel: ${title}`}
       className={cn(
         "rounded-2xl overflow-hidden bg-popover shadow-lg border border-border transition-transform duration-300 hover:scale-[1.02] group relative focus:outline-none focus:ring-4 focus:ring-ring",
-        "cursor-pointer focus-visible:ring-4 focus-visible:ring-ring",
+        "cursor-pointer focus-visible:ring-4 focus-visible:ring-ring h-full",
         "transition-all ease-in-out",
         className
       )}
