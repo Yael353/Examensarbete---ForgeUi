@@ -270,16 +270,7 @@ const SkeletonFour = () => {
 };
 
 const SkeletonFive = () => {
-  const variants = {
-    animate: {
-      x: 5,
-      scale: 1.03,
-      transition: {
-        duration: 0.4,
-        ease: "easeInOut",
-      },
-    },
-  };
+
 
   return (
     <motion.div
