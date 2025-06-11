@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 function BodySection() {
   return (
-    <div className="w-full md:py-20 py-10 text-foreground bg-primary">
+    <div className="w-full md:py-20 py-10 text-foreground bg-background">
       <div className="max-w-[90rem] mx-auto flex flex-col">
         {/* grid grid-cols-1 md:grid-cols-2 gap-12 */}
         {/* Text sektion */}
         <div className="flex flex-col justify-center">
           <h2 className="md:text-7xl font-bold text-foreground font-cinzel w-full pb-4 text-center text-5xl">
-            Unleash the Power of Modern UI
+            Unleash the Power of Modern <span className="text-gold">UI</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
             <p className="md:text-2xl text-xl text-foreground font-semibold font-merriweather text-center font-cinzel px-4">

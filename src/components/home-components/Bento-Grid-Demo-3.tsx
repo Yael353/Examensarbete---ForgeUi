@@ -10,7 +10,7 @@ import CubeCarousel from "../myComponents/carousel/CubeCarousel";
 
 export default function BentoGridThirdDemo() {
   return (
-    <div className="py-20">
+    <div className="py-20 bg-primary">
       <h2 className="text-5xl md:text-6xl font-semibold text-center text-gradient font-cinzel tracking-wide drop-shadow-lg">
         Dive Into Our <span className="text-gold">UI</span> Elements
       </h2>
@@ -236,7 +236,7 @@ const SkeletonFour = () => {
             title="We Forge with React!"
             image="spring2.jpg"
             imageAlt="spring2.jpg"
-            text="Ctrl Z is my love language"
+            text="Every Day I React."
             className="h-full rounded-2xl"
           />
         </NavLink>
@@ -248,7 +248,7 @@ const SkeletonFour = () => {
             title="I love tailwind CSS!"
             image="spring.jpg"
             imageAlt="avatar"
-            text="Sensible"
+            text="Life’s a fetch — handle it!"
             className="h-full rounded-2xl"
           />
         </NavLink>
@@ -257,10 +257,10 @@ const SkeletonFour = () => {
       <motion.div variants={second} className="h-full md:w-1/3">
         <NavLink to="/components/myComponents/card/CardGallery">
           <Card
-            title="Ctrl+Z is my love language."
+            title="Keep Calm and UseState."
             image="spring3.jpg"
             imageAlt="avatar"
-            text="Helpless"
+            text="Proud"
             className="h-full rounded-2xl"
           />
         </NavLink>
@@ -270,8 +270,6 @@ const SkeletonFour = () => {
 };
 
 const SkeletonFive = () => {
-
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

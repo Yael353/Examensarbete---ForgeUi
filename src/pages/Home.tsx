@@ -18,8 +18,8 @@ function Home() {
       </div>
       {/* <Nav/> */}
       <Hero />
-      <BodySection />
       <Layout />
+      <BodySection />
       <Footer />
     </div>
   );

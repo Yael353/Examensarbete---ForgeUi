@@ -78,10 +78,10 @@ export const CardGallery = () => {
         </div>
         <div className="w-full md:w-fit">
           <Card
-            title="WCAG Ready"
+            title="Pixel-Perfect Cards, Crafted for the Modern Web"
             image="/spring3.jpg"
             imageAlt="WCAG friendly card"
-            text="Fully keyboard navigable, screen-reader friendly and optimized for all users."
+            text="Crafted for clarity, accessibility, and visual impact."
           />
         </div>
       </div>
